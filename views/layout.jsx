@@ -14,7 +14,6 @@
 function Header({ user }) {
   return (
     <header className="bp-header">
-      <img className="bp-header__logo" src="/images/logo.png" alt="ApostropheCMS logo" />
       <nav className="bp-nav"></nav>
       {!user && (
         <a className="bp-button bp-header__login" href="/login">Login</a>
@@ -45,14 +44,8 @@ const footerLinks = [
 function Footer() {
   return (
     <footer className="bp-footer">
-      <h3>Essential Links</h3>
-      <ul className="bp-footer__links">
-        {footerLinks.map(({ url, label }) => (
-          <li>
-            <a href={url} target="_blank" rel="noopener noreferrer">{label}</a>
-          </li>
-        ))}
-      </ul>
+
+      <p>Acá iria un footer</p>
     </footer>
   );
 }

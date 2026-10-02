@@ -3,7 +3,7 @@ import apostrophe from 'apostrophe';
 
 apostrophe({
   root: import.meta,
-  shortName: 'logipet-cms-tmp',
+  shortName: 'logipet-cms',
   modules: {
     // Apostrophe module configuration
     // *******************************

@@ -8,34 +8,20 @@ export default function ({ page, user, query }, { Extend, Area }) {
       main={
         <section className="bp-welcome">
           <h1 className="bp-welcome__headline">
-            Welcome to ApostropheCMS
+            Logipet
           </h1>
           {/* Message only for logged out users. */}
           {!user && (
             <>
-              <h3 className="bp-welcome__help">First time spinning up the ApostropheCMS 3 demo?</h3>
-              <p>
-                Use the credentials created during setup with the CLI tool or create a new user with the CLI command:
-              </p>
-              <pre className="bp-welcome__code">
-                <span className="bp-welcome__code__context">Command Line</span>
-                <code>
-                  node app @apostrophecms/user:add myUsername admin
-                </code>
-              </pre>
-              <p className="bp-welcome__cta">
-                <a className="bp-button bp-button--cta" href="/login">Then log in here</a>
-              </p>
+              <img src="/images/favicon.png" alt="ApostropheCMS logo" />
+
             </>
           )}
-          <p>
-            For a guide on how to configure and customize this project, <a href="https://apostrophecms.com/docs">please check out the Apostrophe documentation</a>.
-          </p>
           <div className="bp-welcome__area">
             {/* Message only for logged in users. */}
             {user && (query['apos-edit'] ? (
               <p>
-                Add and edit content below in the content area. 👇
+                editando el home. 👇
               </p>
             ) : (
               <p>

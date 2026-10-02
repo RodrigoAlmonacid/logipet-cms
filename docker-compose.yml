@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: apos
+      POSTGRES_PASSWORD: apos
+      POSTGRES_DB: logipet_cms
+    ports:
+      - "5433:5432"  # distinto puerto si corrés esto junto al compose del TP final
+    volumes:
+      - cms_pg_data:/var/lib/postgresql/data
+
+volumes:
+  cms_pg_data:

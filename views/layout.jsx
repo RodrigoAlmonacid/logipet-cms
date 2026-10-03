@@ -45,7 +45,7 @@ function Footer() {
   return (
     <footer className="bp-footer">
 
-      <p>Acá iria un footer</p>
+      <p className="bp-saludo">© 2026 Logipet. Todos los derechos reservados.</p>
     </footer>
   );
 }

@@ -39,6 +39,7 @@ apostrophe({
     // The project's first custom page type.
     'default-page': {},
     'nested-layout-widget': {},
-    'nested-column-widget': {}
+    'nested-column-widget': {},
+    'admin-ui-overrides': {}
   }
 });

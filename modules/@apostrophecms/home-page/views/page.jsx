@@ -1,7 +1,4 @@
-// The home page. Shows setup guidance to logged-out visitors, an editing hint
-// to logged-in ones, and the page's `main` area to everyone.
-
-export default function ({ page, user, query }, { Extend, Area }) {
+export default function ({ page, user, query, empleados }, { Extend, Area }) {
   return (
     <Extend
       templateName="layout.jsx"
@@ -10,30 +7,42 @@ export default function ({ page, user, query }, { Extend, Area }) {
           <h1 className="bp-welcome__headline">
             Logipet
           </h1>
-          {/* Message only for logged out users. */}
           {!user && (
-            <>
+            <div className="bp-welcome__area">
               <img src="/images/logo.png" alt="ApostropheCMS logo" />
-
-            </>
+            </div>
           )}
           <div className="bp-welcome__area">
-            {/* Message only for logged in users. */}
             {user && (query['apos-edit'] ? (
-              <p>
-                editando el home. 👇
-              </p>
+              <p>Página de inicio...</p>
             ) : (
-              <>
-              <p>
-                {user.firstName}
-              </p>
-              <p>{user.lastName}</p>
-              <p>Un poco de mi: {user.bio}</p>
-              </>
+              <p className="bp-saludo">Bienvenido, {user.firstName} {user.lastName}</p>
             ))}
-
           </div>
+
+          {user && (
+            <div className="bp-empleados">
+              <h2>Nuestros usuarios</h2>
+              <table className="bp-tabla-empleados">
+                <thead>
+                  <tr>
+                    <th>Nombre y apellido</th>
+                    <th>Rol</th>
+                    <th>Biografía</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {empleados.map((e) => (
+                    <tr key={e._id}>
+                      <td>{e.firstName} {e.lastName}</td>
+                      <td>{e.role}</td>
+                      <td>{e.bio}</td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          )}
         </section>
       }
     />

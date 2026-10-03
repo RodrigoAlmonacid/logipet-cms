@@ -1,5 +1,63 @@
-$color-purple: #6236ff;
-$color-purple-light: #8264f1;
-$color-pink: #fe5599;
-$color-green: #0c8;
-$color-gold: #f7b500;
+//Originals
+//$color-purple: #6236ff;
+//$color-purple-light: #8264f1;
+//$color-pink: #fe5599;
+//$color-green: #0c8;
+//$color-gold: #f7b500;
+
+
+// Backgrounds
+$color-bg:            #1c2824; // page background, deep green-grey
+$color-bg-deep:       #151f1c; // bottom of the page gradient, code blocks
+$color-surface:       #243530; // raised areas, key caps
+
+// Text
+$color-text:          #dfe9e2; // body text, soft off-white
+$color-text-strong:   #f3f7f2; // headings
+$color-text-muted:    #a9bcb1; // secondary text
+
+// Greens
+$color-sage:          #8fc4a1;
+$color-mint:          #b7dcc4;
+$color-green-deep:    #3f6b58;
+
+// Faded magentas
+$color-magenta:       #a35c83; // buttons
+$color-magenta-soft:  #cf9ab6; // visited links, accents
+
+// Shadow
+$shadow-soft:         0 18px 40px rgba(6, 12, 10, 0.35);
+
+// ---------------------------------------------------------------------------
+// Legacy names from the original boilerplate, remapped to the new palette so
+// any other stylesheet that still references them keeps compiling.
+// ---------------------------------------------------------------------------
+$color-purple:        $color-magenta;
+$color-purple-light:  $color-magenta-soft;
+$color-pink:          $color-magenta-soft;
+$color-green:         $color-sage;
+$color-gold:          $color-magenta;
+
+// ---------------------------------------------------------------------------
+// Runtime palette. :where() gives these defaults ZERO specificity, so a plain
+// `:root { --color-bg: ... }` from Global Styles always wins, regardless of
+// which stylesheet loads first.
+// ---------------------------------------------------------------------------
+:where(:root) {
+  --color-bg: #{$color-bg};
+  --color-bg-deep: #{$color-bg-deep};
+  --color-surface: #{$color-surface};
+  --color-text: #{$color-text};
+  --color-text-strong: #{$color-text-strong};
+  --color-text-muted: #{$color-text-muted};
+  --color-sage: #{$color-sage};
+  --color-mint: #{$color-mint};
+  --color-green-deep: #{$color-green-deep};
+  --color-magenta: #{$color-magenta};
+  --color-magenta-soft: #{$color-magenta-soft};
+
+  // Derived from the colors above, so they follow any edits automatically.
+  --color-border: color-mix(in srgb, var(--color-mint) 16%, transparent);
+  --color-magenta-hover: color-mix(in srgb, var(--color-magenta) 84%, #000);
+  --shadow-soft: #{$shadow-soft};
+}

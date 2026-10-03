@@ -1,3 +1,5 @@
+/* Original
+
 h1,
 h2,
 h3 {
@@ -66,6 +68,140 @@ pre {
   color: white;
   &:visited, &:hover, &:active {
     color: white;
+  }
+}
+
+.bp-button--cta {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 20px 30px;
+}
+  */
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: var(--color-text-strong);
+  // A soft serif for headings gives a gentle, apothecary feel.
+  font-family: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, "Times New Roman", serif;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 4em;
+  font-weight: 300;
+
+  @media (max-width: 640px) {
+    font-size: 2.6em;
+  }
+}
+
+h2,
+h3 {
+  font-weight: 400;
+}
+
+// Small green accent under h2 headings.
+h2::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 2px;
+  margin: 14px auto 0;
+  background: linear-gradient(90deg, var(--color-sage), var(--color-magenta-soft));
+  border-radius: 2px;
+  opacity: 0.8;
+}
+
+a {
+  color: var(--color-mint);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    color: var(--color-text-strong);
+    text-decoration: underline;
+    text-decoration-color: var(--color-magenta-soft);
+    text-underline-offset: 3px;
+  }
+
+  &:visited {
+    color: var(--color-magenta-soft);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-sage);
+    outline-offset: 3px;
+    border-radius: 3px;
+  }
+}
+
+::selection {
+  background-color: var(--color-magenta);
+  color: var(--color-text-strong);
+}
+
+code {
+  white-space: normal;
+}
+
+pre {
+  display: flex;
+  position: relative;
+  font-family: Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  color: var(--color-text);
+  font-size: 14px;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.8;
+  tab-size: 4;
+  hyphens: none;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  overflow: auto;
+  background: var(--color-bg-deep);
+  border: 1px solid var(--color-border);
+  box-shadow: var(--shadow-soft);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.bp-button {
+  display: inline-block;
+  padding: 12px 24px 10px 24px;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 30px;
+  line-height: 1;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  background: var(--color-magenta);
+  color: var(--color-text-strong);
+  box-shadow: 0 6px 18px rgba(6, 12, 10, 0.3);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+
+  &:visited, &:active {
+    color: var(--color-text-strong);
+  }
+
+  &:hover,
+  &:focus {
+    background: var(--color-magenta-hover);
+    color: var(--color-text-strong);
+    text-decoration: none;
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(6, 12, 10, 0.4);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-sage);
+    outline-offset: 3px;
   }
 }
 

@@ -13,7 +13,7 @@ export default function ({ page, user, query }, { Extend, Area }) {
           {/* Message only for logged out users. */}
           {!user && (
             <>
-              <img src="/images/favicon.png" alt="ApostropheCMS logo" />
+              <img src="/images/logo.png" alt="ApostropheCMS logo" />
 
             </>
           )}
@@ -24,11 +24,15 @@ export default function ({ page, user, query }, { Extend, Area }) {
                 editando el home. 👇
               </p>
             ) : (
+              <>
               <p>
-                Enter <span className="bp-mode">Edit</span> mode from the admin bar <span style="display:inline-block; transform: rotate(45deg)">👆</span> to begin.
+                {user.firstName}
               </p>
+              <p>{user.lastName}</p>
+              <p>Un poco de mi: {user.bio}</p>
+              </>
             ))}
-            <Area doc={page} name="main" />
+
           </div>
         </section>
       }

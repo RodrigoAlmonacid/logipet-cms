@@ -9,16 +9,24 @@ export default {
       changePassword: {
         fields: ['password']
       },
-      basics: {
-        label: 'Mi perfil',
-        fields: ['firstName', 'lastName', 'bio']
-      }
+      nombre: {
+        label: 'Nombre',
+        fields: ['firstName']
+      },
+      apellido: {
+        label: 'Apellido',
+        fields: ['lastName']
+      },
+      bio: {
+        label: 'Biografía',
+        fields: ['bio']
+      },
     },
 
     groups: {
       account: {
         label: 'Account',
-        subforms: ['title', 'changePassword', 'basics']
+        subforms: ['title', 'changePassword', 'nombre', 'apellido', 'bio']
       }
     }
   }
